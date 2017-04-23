@@ -46,27 +46,15 @@ def multidecrypt(c):
 	
 	return hasil
 
-def satukanargumen(): # untuk inputan bersepasi
-	if(len(sys.argv)>3):
-		hasil=''
-		for i in range(2, len(sys.argv)):
-			hasil+=sys.argv[i]
-			if (i != len(sys.argv)-1):
-				hasil+= ' '
-
-		return hasil
-	else:
-		return sys.argv[2]
-
-
-#meriksa argument
-
-if(sys.argv[1]=='--encrypt'):
-	print multiencrypt(satukanargumen())
-elif (sys.argv[1]=='--decrypt'):
-	print multidecrypt(sys.argv[2])
+pilihan = raw_input("Pilih encrypt(1) atau decrypt(2): ")
+if pilihan == '1':
+	plain = raw_input("Masukan text: ")
+	print multiencrypt(plain)
+elif pilihan == '2':
+	chiper = raw_input("Masukan chiper text: ")
+	print multidecrypt(chiper)
 else:
-	print "Argument tidak dikenal"
+	print "Argumen tidak dikenal"
 
 
 
